@@ -1,0 +1,16 @@
+{
+  "name": "tyen",
+  "description": "environment manager for typescript",
+  "version": "1.0.1",
+  "main": "build/module.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Subeom Choi <subumm1@gmail.com>",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "tyfell": "^0.1.1",
+    "typescript": "^4.8.4"
+  }
+}
