@@ -7,7 +7,7 @@ environment manager for typescript
 ```typescript
 import { Environment } from 'tyen'
 
-const environment = Environment('./environment.ts', {
+const environment = Environment(import('./environment.ts'), {
     token: 'string',
     timeout: 'number',
 })

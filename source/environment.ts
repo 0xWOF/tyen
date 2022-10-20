@@ -5,12 +5,10 @@ import { Schema, SchemaOf } from './type/schema'
 const Environment = async <
     EnvironmentSchema extends Schema
 > (
-    path: string,
+    importPromise: Promise<any>,
     schema: EnvironmentSchema,
 ): Promise<SchemaOf<EnvironmentSchema>> => {
-    const data = await optional.try(async () => (
-        await import(path)
-    )) ?? throws(NotFoundError(path))
+    const data = await importPromise
 
     extract.entries(schema).forEach(([key, type]) => (
         optional[type](data[key]) ?? throws(NotInSchemaError(key, type))
